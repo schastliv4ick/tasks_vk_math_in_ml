@@ -12,13 +12,8 @@ def rec(a, Dig, deep):
 
 
 
-
-def A():
-    N = int(input()) # размер размещения
-    maxDig = int(input()) # максимальная цифра
-    cnt = (maxDig+1)**N
-    a = []
-    rec(a, maxDig, N)
-
-
-A()
+N = int(input()) # размер размещения
+maxDig = int(input()) # максимальная цифра
+cnt = (maxDig+1)**N
+a = []
+rec(a, maxDig, N)
