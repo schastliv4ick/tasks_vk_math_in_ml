@@ -30,4 +30,34 @@ def task_1():
 
     for i, (name, birth, check) in enumerate(clients_data, 1):
         print(f"{name:20} {birth:12} {check:8.2f} руб.")
-    
+
+def intersection_custom(A, B):
+    """Собственная реализация пересечения множеств без использования встроенного intersection"""
+    result = set()
+    for element in A:
+        if element in B:
+            result.add(element)
+    return result
+
+
+
+line1 = input().strip()
+line2 = input().strip()
+
+if line1 == "EMPTY":
+    A = set()
+else:
+    A = set(map(int, line1.split()))
+
+if line2 == "EMPTY":
+    B = set()
+else:
+    B = set(map(int, line2.split()))
+
+intersection_result = intersection_custom(A, B)
+
+if not intersection_result:
+    print("EMPTY")
+else:
+    sorted_result = sorted(intersection_result)
+    print(" ".join(map(str, sorted_result)))
